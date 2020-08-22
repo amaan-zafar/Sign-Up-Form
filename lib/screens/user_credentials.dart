@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_up/components/background.dart';
+import 'package:sign_up/components/card.dart';
 import 'package:sign_up/components/round_button.dart';
 import 'package:sign_up/components/social_sites_container.dart';
 import 'package:sign_up/components/text_field_container.dart';
@@ -8,12 +9,12 @@ import 'package:sign_up/screens/user_info.dart';
 
 import '../colors.dart';
 
-class SignUpBody extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _SignUpBodyState createState() => _SignUpBodyState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignUpBodyState extends State<SignUpBody> {
+class _SignUpState extends State<SignUp> {
   User user = User();
   TextEditingController _passController = TextEditingController();
   bool _passObscureText = true;
@@ -187,17 +188,12 @@ class _SignUpBodyState extends State<SignUpBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      Background(),
-      Center(
-        child: Card(
-          color: Colors.white,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          elevation: 6.0,
-          margin: EdgeInsets.symmetric(horizontal: 28),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 48),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Stack(children: <Widget>[
+        Background(),
+        Center(
+          child: CustomCard(
             child: Form(
               key: _formKey,
               child: Wrap(
@@ -225,7 +221,7 @@ class _SignUpBodyState extends State<SignUpBody> {
             ),
           ),
         ),
-      ),
-    ]);
+      ]),
+    );
   }
 }

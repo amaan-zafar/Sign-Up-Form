@@ -3,7 +3,7 @@ class User {
   String _email;
   String _password;
   String _phone;
-  String _gender;
+  String _gender = 'Other';
 
   String get name => _name;
 
