@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SignUp Demo',
+      title: 'SignUp Demo', //signs up
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         iconTheme: IconThemeData(color: kPrimaryColor),
