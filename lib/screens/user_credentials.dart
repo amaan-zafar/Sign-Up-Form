@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/components/background.dart';
-import 'package:sign_up/components/card.dart';
-import 'package:sign_up/components/round_button.dart';
-import 'package:sign_up/components/social_sites_container.dart';
-import 'package:sign_up/components/text_field_container.dart';
+
 import 'package:sign_up/models/user.dart';
 import 'package:sign_up/screens/user_info.dart';
+import 'package:sign_up/widgets/background.dart';
+import 'package:sign_up/widgets/card.dart';
+import 'package:sign_up/widgets/round_button.dart';
+import 'package:sign_up/widgets/social_sites_container.dart';
+import 'package:sign_up/widgets/text_field_container.dart';
 
 import '../colors.dart';
 
@@ -50,6 +51,7 @@ class _SignUpState extends State<SignUp> {
               .hasMatch(value)) {
             return 'Enter a valid email address';
           }
+          return null;
         },
         onSaved: (String value) {
           user.email = value.trim();

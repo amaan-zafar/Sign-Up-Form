@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sign_up/components/background.dart';
-import 'package:sign_up/components/card.dart';
-import 'package:sign_up/components/round_button.dart';
-import 'package:sign_up/components/text_field_container.dart';
+import 'package:sign_up/widgets/background.dart';
+import 'package:sign_up/widgets/card.dart';
+import 'package:sign_up/widgets/round_button.dart';
+import 'package:sign_up/widgets/text_field_container.dart';
 import 'package:sign_up/models/user.dart';
 
 class UserInfo extends StatefulWidget {
@@ -29,6 +29,7 @@ class _UserInfoState extends State<UserInfo> {
         if (value.trim().isEmpty) {
           return 'Name is reuired';
         }
+        return null;
       },
       onSaved: (String value) {
         user.name = value.trim();
@@ -55,6 +56,7 @@ class _UserInfoState extends State<UserInfo> {
         } else if (value.length != 10) {
           return 'Phone Number must be of 10 digits';
         }
+        return null;
       },
       onSaved: (String value) {
         user.phone = value;
